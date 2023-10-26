@@ -15,7 +15,6 @@ import {
 import ExpressFormidable from "express-formidable";
 // router object
 const router = Express.Router();
-
 // route
 router.post(
   "/create-product",
@@ -45,10 +44,8 @@ router.delete(
   isAdmin,
   deleteProductController
 );
-
 // filter product
 router.post("/filter-product", filterProductController);
-
 // Product count
 router.get("/product-count", productCountController);
 // "product list per page"

@@ -2,9 +2,11 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices";
 const HomwPage = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
@@ -178,7 +180,10 @@ const HomwPage = () => {
                       >
                         {product.description}
                       </p>
-                      <button className="btn btn-primary ms-1">
+                      <button
+                        className="btn btn-primary ms-1"
+                        onClick={() => navigate(`/product/${product.slug}`)}
+                      >
                         More Details
                       </button>
                       <button className="btn btn-secondary ms-1">
